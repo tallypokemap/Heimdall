@@ -17,7 +17,7 @@ For support, join this Discord server: https://discord.gg/NkcAmM5
 2. `cd ./Heimdall`
 3. `python3 -m pip install -r requirements.txt`
 
-![](http://imgur.com/nMdGo2w)
+![](http://i.imgur.com/nMdGo2w.png)
 
 **How to set up (always use Notepad++ and never notepad!):**
 
