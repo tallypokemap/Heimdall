@@ -21,12 +21,9 @@ def get_args():
                         help='Token for your bot account', required=True)
     parser.add_argument('-mod', '--mod_logs', type=str,
                         help='The ID of your mod_logs', required=True)
-    parser.add_argument('-uses', '--uses', type=int,
-                        help='The max number of uses for an invite',
-                        required=True)
     parser.add_argument('-exp', '--expires', type=int,
                         help='Time in seconds an invite is set to expire',
-                        required=True)
+                        default=21600)
 
     args = parser.parse_args()
 
