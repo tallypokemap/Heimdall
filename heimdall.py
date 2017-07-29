@@ -40,7 +40,6 @@ def get_args():
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.invisible)
     print('Connected! Ready to protect.')
     print('Username: ' + client.user.name)
     print('ID: ' + client.user.id)
