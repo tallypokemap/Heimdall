@@ -48,15 +48,15 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.content.lower() == '&invite':
-        invite = await client.create_invite(destination = message.server,
-                                            max_age = args.expires)
+        invite = await client.create_invite(destination=message.server,
+                                            max_age=args.expires)
         await client.send_message(discord.utils.find(
             lambda u: u.id == message.author.id, client.get_all_members()),
                                   invite)
         await client.send_message(discord.utils.find(
             lambda c: c.id == args.mod_logs, client.get_all_channels()),
-            "`{}` created an invite! (`{}`)".format(message.author.display_name,
-                                                  invite.code))
+            "`{}` created an invite! (`{}`)".format(
+                message.author.display_name, invite.code))
         await client.delete_message(message)
 
 
