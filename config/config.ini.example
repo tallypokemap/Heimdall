@@ -1,0 +1,4 @@
+token:					##Token for your bot account
+mod_logs:				##The ID of your mod_logs
+uses:					##The max number of uses for an invite
+expires:				##Time in seconds an invite is set to expire

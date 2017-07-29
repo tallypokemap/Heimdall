@@ -1,0 +1,5 @@
+*.pyc
+config/*
+!config/config.ini.example
+icons/
+null
