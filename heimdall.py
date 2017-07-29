@@ -8,14 +8,14 @@ import os
 import sys
 
 client = discord.Client()
-intro_msg = ("Be warned, I shall uphold my sacred oath to protect this realm " +
-    "as its gatekeeper. If your invite threatens the safety of the server, " +
-    "my gate will remain shut and you will be left to perish on the cold " +
-    "waste of Niantics tracker.\n")
+intro_msg = ("Be warned, I shall uphold my sacred oath to protect this " +
+             "realm as its gatekeeper. If your invite threatens the safety " +
+             "of the server, my gate will remain shut and you will be left " +
+             "to perish on the cold waste of Niantics tracker.\n")
 info_msg = (intro_msg +
-    "`&invite` to get a DM with a 1-time use code, the code duration is set " +
-    "by the server admin and is subject to change.\n"
-    "`&donate` to see donation information for this project.")
+            "`&invite` to get a DM with a 1-time use code, the code " +
+            "duration is set by the server admin and is subject to change.\n" +
+            "`&donate` to see donation information for this project.")
 
 
 def get_args():
