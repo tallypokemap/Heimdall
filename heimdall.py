@@ -8,6 +8,14 @@ import os
 import sys
 
 client = discord.Client()
+intro_msg = ("Be warned, I shall uphold my sacred oath to protect this realm " +
+    "as its gatekeeper. If your invite threatens the safety of the server, " +
+    "my gate will remain shut and you will be left to perish on the cold " +
+    "waste of Niantics tracker.\n")
+info_msg = (intro_msg +
+    "`&invite` to get a DM with a 1-time use code, the code duration is set " +
+    "by the server admin and is subject to change.\n"
+    "`&donate` to see donation information for this project.")
 
 
 def get_args():
@@ -49,11 +57,27 @@ async def on_message(message):
                                             max_age=args.expires)
         await client.send_message(discord.utils.find(
             lambda u: u.id == message.author.id, client.get_all_members()),
-                                  invite)
+                                  intro_msg + str(invite))
         await client.send_message(discord.utils.find(
             lambda c: c.id == args.mod_logs, client.get_all_channels()),
             "`{}` created an invite! (`{}`)".format(
                 message.author.display_name, invite.code))
+        await client.delete_message(message)
+    if message.content.lower() == '&donate':
+        msg_title = "DONATION INFORMATION"
+        descript = ("Support this project!\n" +
+                    "PayPal: https://www.paypal.me/dneal12\n" +
+                    "Patreon - https://www.patreon.com/dneal12\n" +
+                    "Please note: this donation goes directly into the \n" +
+                    "pocket of the bot dev, not this Discord server.")
+        col = int('0x85bb65', 16)
+        em = discord.Embed(title=msg_title, description=descript, color=col)
+        await client.send_message(message.channel, embed=em)
+    if (message.content.lower() == '&commands' or
+            message.content.lower() == '&help'):
+        delete = await client.send_message(message.channel, info_msg)
+        await asyncio.sleep(60)
+        await client.delete_message(delete)
         await client.delete_message(message)
 
 
