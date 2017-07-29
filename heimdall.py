@@ -84,7 +84,7 @@ async def on_message(message):
 async def on_member_join(member):
     invites = await client.invites_from(member.server)
     for invite in invites:
-        if invite.uses > 0:
+        if invite.uses > 0 and invite.inviter == client.user:
             await client.send_message(discord.utils.find(
                 lambda c: c.id == args.mod_logs, client.get_all_channels()),
                                       "`{}` used an invite! (`{}`)".format(
