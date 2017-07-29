@@ -72,12 +72,13 @@ async def on_message(message):
         col = int('0x85bb65', 16)
         em = discord.Embed(title=msg_title, description=descript, color=col)
         await client.send_message(message.channel, embed=em)
+        await client.delete_message(message)
     if (message.content.lower() == '&commands' or
             message.content.lower() == '&help'):
         delete = await client.send_message(message.channel, info_msg)
+        await client.delete_message(message)
         await asyncio.sleep(60)
         await client.delete_message(delete)
-        await client.delete_message(message)
 
 
 @client.event
