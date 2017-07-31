@@ -9,7 +9,7 @@ For support, join this Discord server: https://discord.gg/NkcAmM5
 **Requirements:**
 
 1. Python3
-2. A Discord bot with proper perm.  Here is a link on how to set it up: https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token
+2. A Discord bot with proper permissions.  Here is a link on how to set it up: https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token
 
 **How to install (for Windows):**
 
