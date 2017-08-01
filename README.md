@@ -4,7 +4,7 @@
 
 A discord invite creation bot.
 
-This bot will allow you to make all your invites, one-time use codes and then track who invited whom.
+This bot will allow you to make all your invites one-time use codes and then also track who invited whom.
 
 For support, join this Discord server: https://discord.gg/NkcAmM5
 
